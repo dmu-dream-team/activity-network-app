@@ -29,6 +29,10 @@ module ActivityNetworkApp
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+    config.filter_parameters += [:token]
+
+    # TODO: Remove defaults for production deployment
     config.static_token = ENV.fetch('STATIC_TOKEN', 'foo')
+    config.rmq_uri = ENV.fetch('CLOUDAMQP_URL', 'amqp://guest:guest@localhost:5672')
   end
 end

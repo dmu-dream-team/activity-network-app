@@ -16,7 +16,7 @@ services:
   web:
     environment:
       - DB_HOST=db
-    command: sh bin/wrails
+    command: sh
     ports:
       - "0.0.0.0:3000:3000"
       - "0.0.0.0:3035:3035"

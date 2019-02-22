@@ -3,7 +3,8 @@
 
 ## Start image and add some addons
 FROM ruby:2.5.3-alpine
-RUN apk --no-cache add vim build-base nodejs postgresql-dev git linux-headers cmake tzdata
+RUN apk --no-cache add vim build-base nodejs nodejs-npm postgresql-dev git linux-headers cmake tzdata && \
+    gem install bundler
 
 ## Set TZ info
 RUN cp /usr/share/zoneinfo/Europe/Stockholm /etc/localtime

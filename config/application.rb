@@ -29,5 +29,6 @@ module ActivityNetworkApp
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+    config.static_token = ENV.fetch('STATIC_TOKEN', 'foo')
   end
 end

@@ -12,7 +12,7 @@ development:
   <<: *default
   database: activity_network_app_development
   username: <%= ENV['DB_USER'] || "postgres" %>
-  password: <%= ENV['DB_PASSWORD'] %>
+  password: <%= ENV['DB_PASSWORD'] || "postgres" %>
   host: <%= ENV['DB_HOST'] || "localhost" %>
   port: <%= ENV['DB_PORT'] || 5432 %>
 

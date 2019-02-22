@@ -1,0 +1,37 @@
+locations:
+  -
+    nyko_id: 1
+    nyko_name: Sundsvalls täto
+    friendly_name: Sundsvall stan
+  -
+    nyko_id: 2
+    nyko_name: Alnö kdel
+    friendly_name: Alnö
+  -
+    nyko_id: 3
+    nyko_name: Kovland kdel
+    friendly_name: Kovland
+  -
+    nyko_id: 4
+    nyko_name: Njurunda täto
+    friendly_name: Njurunda tätort
+  -
+    nyko_id: 5
+    nyko_name: Njurunda glesb
+    friendly_name: Njurunda glesbygd
+  -
+    nyko_id: 6
+    nyko_name: Matfors kdel
+    friendly_name: Matfors
+  -
+    nyko_id: 7
+    nyko_name: Stöde kdel
+    friendly_name: Stöde
+  -
+    nyko_id: 8
+    nyko_name: IndalLiden kdel
+    friendly_name: Indal eller Liden
+  -
+    nyko_id: 9
+    nyko_name: Restpost
+    friendly_name: Någonstans annat

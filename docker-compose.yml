@@ -26,6 +26,7 @@ services:
       - storage
     volumes:
       - ./app:/app/app:cached
+      - ./lib:/app/lib:cached
       - ./spec:/app/spec:cached
       - ./config:/app/config:cached
       - ./db:/app/db:cached

@@ -1,13 +1,13 @@
 <template>
-  <Header />
+  <SignUpForm />
 </template>
 
 <script>
-import Header from 'components/Header/Header';
+import SignUpForm from 'components/SignUpForm/SignUpForm';
 
 export default {
   components: {
-    Header,
+    SignUpForm,
   },
 };
 </script>

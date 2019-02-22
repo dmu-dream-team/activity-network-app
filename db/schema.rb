@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_22_184111) do
+ActiveRecord::Schema.define(version: 2019_02_22_192604) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "clusters", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "interests", force: :cascade do |t|
     t.string "name"
@@ -43,8 +53,14 @@ ActiveRecord::Schema.define(version: 2019_02_22_184111) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "location_id"
+    t.bigint "event_id"
+    t.bigint "cluster_id"
+    t.index ["cluster_id"], name: "index_users_on_cluster_id"
+    t.index ["event_id"], name: "index_users_on_event_id"
     t.index ["location_id"], name: "index_users_on_location_id"
   end
 
+  add_foreign_key "users", "clusters"
+  add_foreign_key "users", "events"
   add_foreign_key "users", "locations"
 end

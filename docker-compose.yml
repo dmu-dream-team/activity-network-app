@@ -1,0 +1,45 @@
+version: '3'
+services:
+  db:
+    image: postgres:latest
+    expose:
+      - "5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./db:/rails_db
+    depends_on:
+      - storage
+  queue:
+    image: rabbitmq:alpine
+    expose:
+      - "5672"
+  web:
+    environment:
+      - DB_HOST=db
+    command: sh bin/wrails
+    ports:
+      - "0.0.0.0:3000:3000"
+      - "0.0.0.0:3035:3035"
+    depends_on:
+      - db
+      - queue
+      - storage
+    volumes:
+      - ./app:/app/app:cached
+      - ./spec:/app/spec:cached
+      - ./config:/app/config:cached
+      - ./db:/app/db:cached
+      - ./Gemfile:/app/Gemfile
+      - ./Gemfile.lock:/app/Gemfile.lock
+      - ./package.json:/app/package.json
+      - ./package-lock.json:/app/package-lock.json
+    tmpfs:
+      - /sparrow/tmp/
+    build: .
+  storage:
+    image: busybox
+    volumes:
+      - postgres_data:/postgres_data
+
+volumes:
+  postgres_data:

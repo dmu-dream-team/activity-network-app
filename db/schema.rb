@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_22_175631) do
+ActiveRecord::Schema.define(version: 2019_02_22_184111) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "interests", force: :cascade do |t|
+    t.string "name"
+    t.string "synonyms"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "interests_users", id: false, force: :cascade do |t|
+    t.integer "interest_id"
+    t.integer "user_id"
+  end
 
   create_table "locations", force: :cascade do |t|
     t.integer "nyko_id", null: false
@@ -30,6 +42,9 @@ ActiveRecord::Schema.define(version: 2019_02_22_175631) do
     t.integer "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "location_id"
+    t.index ["location_id"], name: "index_users_on_location_id"
   end
 
+  add_foreign_key "users", "locations"
 end

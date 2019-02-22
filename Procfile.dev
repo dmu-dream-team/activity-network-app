@@ -1,0 +1,8 @@
+# Start rails
+web: bundle exec rails s -p 3000 -b 0.0.0.0
+
+# Start the config watcher for webpack
+# watcher: ./bin/webpack-watcher
+
+# Start Webpacker in dev mode
+webpacker: ./bin/webpack-dev-server

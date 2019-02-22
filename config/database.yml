@@ -19,6 +19,10 @@ development:
 test:
   <<: *default
   database: activity_network_app_test
+  username: <%= ENV['DB_USER'] || "postgres" %>
+  password: <%= ENV['DB_PASSWORD'] %>
+  host: <%= ENV['DB_HOST'] || "localhost" %>
+  port: <%= ENV['DB_PORT'] || 5432 %>
 
 production:
   <<: *default

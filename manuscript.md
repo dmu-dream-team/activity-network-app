@@ -12,7 +12,7 @@
 - The service will be free for the end users.
 - To kickstart the development we plan to seek funding through EU Regional Development fund.
 - We plan to become economically sustainable through partnerships with restaurants who will revshare with us to get people to their business.
-- We plan to market through mobile phone providers invoices and the seniors organization(PRO).
+- We plan to market through the invoices of mobile phone providers and the seniors organization(PRO).
 - Our main competitors are other digital services and physical natural meeting points.
 - We aim to make PRO our partner rather than a competitor.
 - In our future, no senior will feel lonely.

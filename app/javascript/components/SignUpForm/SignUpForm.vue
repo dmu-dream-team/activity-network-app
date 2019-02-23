@@ -1,10 +1,16 @@
 <template>
-  <div>
-    <form v-if="!formSubmitted" class="sign-up-form" action="/api/users/v1" method="post" @submit.prevent="signUp">
-      <label for="phone">Enter your phone number:</label>
-      <input type="tel" id="phone" name="phone" v-model="phoneNumber" @input="clearError">
+  <div class="sign-up-form">
+    <form v-if="!formSubmitted" class="sign-up-form__form" action="/api/users/v1" method="post" @submit.prevent="signUp">
+      <div>
+        <label class="sign-up-form__label" for="phone">Enter your phone number:</label>
+      </div>
+      <div>
+        <input class="sign-up-form__input" type="tel" id="phone" name="phone" v-model="phoneNumber" @input="clearError">
+      </div>
 
-      <input type="submit" value="Sign up now!">
+      <div>
+        <input class="sign-up-form__button" type="submit" value="Sign up now!">
+      </div>
       {{ error }}
     </form>
 
@@ -65,3 +71,33 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.sign-up-form__label {
+  margin-bottom: 5px;
+  font-weight: 200;
+}
+
+.sign-up-form__input {
+  margin-bottom: 10px;
+  background-color: transparent;
+  border: 0;
+  color: #101F2B;
+  border-bottom: solid 1px #101F2B;
+  width: 80%;
+  padding: 10px 0;
+  font-size: 16px;
+  font-weight: 200;
+  text-align: center;
+}
+
+.sign-up-form__button {
+  border: solid 1px #101F2B;
+  border-radius: 20px;
+  font-size: 16px;
+  color: #101F2B;
+  font-weight: 200;
+  background-color: transparent;
+  padding: 10px 20px;
+}
+</style>

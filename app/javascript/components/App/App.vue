@@ -1,13 +1,24 @@
 <template>
-  <SignUpForm />
+  <div>
+    <Header />
+    <MoreInfo />
+  </div>
 </template>
 
 <script>
-import SignUpForm from 'components/SignUpForm/SignUpForm';
+import Header from 'components/Header/Header';
+import MoreInfo from 'components/MoreInfo/MoreInfo';
 
 export default {
   components: {
-    SignUpForm,
+    Header,
+    MoreInfo,
   },
 };
 </script>
+
+<style>
+body {
+  margin: 0;
+}
+</style>

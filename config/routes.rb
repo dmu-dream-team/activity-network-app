@@ -10,11 +10,9 @@ Rails.application.routes.draw do
       end
     end
 
-    # namespace :messages do
-    #   namespace :v1 do
-    #     post '/' => 'messages#create'
-    # end
-
-    post 'inbox', to: 'inbox#create'
+    namespace :messages do
+      namespace :v1 do
+        post '/' => 'messages#create'
+    end
   end
 end

@@ -6,8 +6,14 @@ module Api
       class MessagesController < ApiController
         def create
           Rails.logger.info("#{self.class}: Incoming request: #{params}.")
-          SmsGateway.receive(params)
+          SmsInbox.create(elk_params)
           head 200
+        end
+
+        private
+
+        def elk_params
+          params.permit(:from, :message)
         end
       end
     end

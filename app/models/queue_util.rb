@@ -8,12 +8,12 @@ class QueueUtil
       user_id: user_id
     }.to_json
 
-    publish(key, payload)
+    publish(payload)
   end
 
   private
 
-  def publish(key, payload)
+  def self.publish(payload)
     conn = Bunny.new Rails.application.config.rmq_uri
     conn.start
     channel = conn.create_channel
@@ -25,7 +25,7 @@ class QueueUtil
     exchange.publish(
       payload,
       message_id: uuid,
-      routing_key: "TAN-#{key}"
+      routing_key: 'TAN-messages'
     )
   ensure
     conn.close

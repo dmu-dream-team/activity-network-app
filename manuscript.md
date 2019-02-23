@@ -5,16 +5,18 @@
 - We've also learnt that half of the people between age 65 and 85 say they never use the internet.
 - To help meet new people, in contrast to social networks who let you meet people you already know, we've built a SMS based event creation service for seniors.
 - We choose SMS due to the low technical barrier to entry.
-- Most people have a phone.
-- In the future we plan to also support voice recognition.
+- Because most people do have a phone.
+- In the future we plan to also support voice recognition, to aid those uncomfortable with texts.
 - We have yet to validate that our target group would be comfortable with getting a blind date setup over SMS, which is something we would do shortly.
 - Once a blind date is spawned the staff will book the restaurant and invites will be sent to participants.
+- The service will be free for the end users.
 - To kickstart the development we plan to seek funding through EU Regional Development fund.
-- The service is free for the end user.
 - We plan to become economically sustainable through partnerships with restaurants who will revshare with us to get people to their business.
 - We plan to market through mobile phone providers invoices and the seniors organization(PRO).
 - Our main competitors are other digital services and physical natural meeting points.
 - We aim to make PRO our partner rather than a competitor.
+- In our future, no senior will feel lonely.
+- Questions?
 
 ### Tech Jury
 - We've created a service that will cluster people based on interest and location through SMS.

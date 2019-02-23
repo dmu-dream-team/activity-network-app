@@ -4,6 +4,7 @@ class Api::InboxController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def create
+    SmsInbox.receive(elk_params)
     head :ok, content_type: 'text/html'
   end
 

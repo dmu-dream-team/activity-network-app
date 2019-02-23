@@ -5,17 +5,19 @@ require 'sneakers'
 class IncomingTextListener
   include Sneakers::Worker
 
-  from_queue 'TAN_incoming_texts',
-             exchange: 'TAN_incoming_texts',
+  from_queue 'TAN-messages',
+             exchange: 'TAN-messages',
              exchange_type: 'fanout',
              threads: 1,
              bind_arguments: {
-               routing_key: 'TAN_incoming_texts'
+               routing_key: 'TAN-messages'
              }
 
   def work(msg)
-    Rails.logger.error "#{self.class}: Received message: #{msg}"
-    TextRouter.route_text(msg)
+    Rails.logger.info "#{self.class}: Received message: #{msg}"
+
+    parsed_message = JSON.parse msg, symbolize_names: true
+    MessageRouter.process parsed_message
     ack!
   rescue StandardError => e
     Rails.logger.error("#{self.class}: Caught error: #{e}.")

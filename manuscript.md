@@ -22,6 +22,7 @@
 - We have a rails app running message handling workers that currently funnel the conversation through two state machines for onboarding and event orchestration.
 - All message handling is temporarily persisted and synchronized through RabbitMQ.
 - A separate python service is used for interest and geo-based K-means clustering with a Jaccard-similarity measure based on normalized entity-distance values.
+- We have found that K-means might not be very well suited for categorical data, we should probably switch to either K-modes, hierarchical clustering or ROCK (RObust Clustering using linKs). Hierarchical clustering blends with geo easier, so we would try that first.
 
 ### 60s pitch
 - Now, more than ever we lead a predominantly digital life in a digitized society.

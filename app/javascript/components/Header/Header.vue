@@ -3,11 +3,12 @@
     <div class="header__content">
       <h1 class="header__headline">The <span class="header__headline--yellow">Activity</span> Network</h1>
 
+      <!-- TODO: Change back to actual phone number: 076 686 26 84 -->
       <a
-        href="sms:0766862684?body=I would like to enjoy a lunch."
+        href="sms:0766862600?body=I would like to enjoy a lunch."
         class="header__phone-number"
       >
-        076 686 26 84
+        076 686 26 00
       </a>
 
       <p class="header__text">

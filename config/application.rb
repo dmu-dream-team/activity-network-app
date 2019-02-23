@@ -32,7 +32,9 @@ module ActivityNetworkApp
     config.filter_parameters += [:token]
 
     # TODO: Remove defaults for production deployment
-    config.static_token = ENV.fetch('STATIC_TOKEN', 'foo')
     config.rmq_uri = ENV.fetch('CLOUDAMQP_URL', 'amqp://guest:guest@localhost:5672')
+    config.static_token = ENV.fetch('STATIC_TOKEN', 'foo')
+    config.sms_api_username = ENV.fetch('SMS_API_USERNAME', 'bar')
+    config.sms_api_password = ENV.fetch('SMS_API_PASSWORD', 'baz')
   end
 end

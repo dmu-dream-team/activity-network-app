@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     namespace :messages do
       namespace :v1 do
         post '/' => 'messages#create'
+      end
     end
   end
 end
